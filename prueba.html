@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body>
+    <h1>hola</h1>
+    <div>
+        <input type="text" id="inputTexto">
+        <button onclick="verificarContenido()">Verificar Contenido</button>
+        <br><br>
+    </div>
+    <div>
+        <label id="idTexto"></label>
+    </div>
+    
+    <script>
+        function ejecutar() {
+            
+            let elementoTexto = document.getElementById("idTexto");
+            elementoTexto.style.backgroundColor = "yellow";
+            elementoTexto.style.color = "red";
+        }
+
+        function verificarContenido() {
+            let inputTexto = document.getElementById("inputTexto").value;
+            let elementoTexto = document.getElementById("idTexto");
+            let mensaje = "";
+
+            if (inputTexto.trim() !== "") {
+                alert( mensaje = "El label contiene algo: " + inputTexto)
+                console.log("el label contiene: " + inputTexto)
+            } else {
+                alert(mensaje = "El label no contiene nada.");
+                console.log("el label no contiene nada: " + inputTexto)
+            }
+
+            elementoTexto.innerHTML = mensaje;
+            ejecutar(); 
+              // Limpiar el contenido del input
+              document.getElementById("inputTexto").value = "";
+        }
+    </script>
+</body>
+</html>
